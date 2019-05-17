@@ -27,6 +27,9 @@ class Api::V1::UsersController < ApplicationController
     @user.update(user_params)
   end
 
+  def profile
+    render json: { user: UserSerializer.new(current_user) }, status: :accepted
+  end
 
 
   private

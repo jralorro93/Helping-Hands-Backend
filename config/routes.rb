@@ -5,7 +5,8 @@ Rails.application.routes.draw do
       resources :users
       resource :services
       resource :bookings
-      
+      post '/login', to: 'auth#create'
+      get '/profile', to: 'users#profile'
     end
   end
 
