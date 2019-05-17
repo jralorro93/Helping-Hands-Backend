@@ -5,6 +5,9 @@ Rails.application.routes.draw do
       resources :users
       resource :services
       resource :bookings
+      
     end
   end
+
+
 end
