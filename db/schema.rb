@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2019_05_15_172531) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "client_id"
-    t.integer "service_provider_id"
     t.integer "service_id"
     t.date "date"
     t.time "time"
