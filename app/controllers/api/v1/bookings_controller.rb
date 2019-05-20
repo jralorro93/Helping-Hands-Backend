@@ -23,6 +23,6 @@ class Api::V1::BookingsController < ApplicationController
   private
 
   def booking_params
-    params.permit(:id, :client_id, :service_id, :date, :time)
+    params.permit(:client_id, :service_id, :date, :time)
   end
 end
