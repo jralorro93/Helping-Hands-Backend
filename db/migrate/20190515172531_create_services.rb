@@ -3,6 +3,7 @@ class CreateServices < ActiveRecord::Migration[5.2]
     create_table :services do |t|
       t.string :job
       t.float :price
+      t.string :availability
       t.integer :service_provider_id
 
       t.timestamps

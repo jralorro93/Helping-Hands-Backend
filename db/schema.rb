@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_05_15_172531) do
   create_table "services", force: :cascade do |t|
     t.string "job"
     t.float "price"
+    t.string "availability"
     t.integer "service_provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
