@@ -23,6 +23,9 @@ class Api::V1::BookingsController < ApplicationController
   private
 
   def booking_params
-    params.permit(:client_id, :service_id, :date, :time)
+    body_params = params.permit(:service_id, :date, :time)
+    current_user_params = {client_id: current_user.id}
+    body_params.merge(current_user_params)
+    byebug
   end
 end
