@@ -13,6 +13,7 @@ class Api::V1::BookingsController < ApplicationController
 
   def create
     @booking = Booking.create(booking_params)
+    byebug
     if @booking.valid?
       render json: @booking
     else
@@ -25,7 +26,6 @@ class Api::V1::BookingsController < ApplicationController
   def booking_params
     body_params = params.permit(:service_id, :date, :time)
     current_user_params = {client_id: current_user.id}
-    body_params.merge(current_user_params)
-    byebug
+    body_params.merge!(current_user_params)
   end
 end

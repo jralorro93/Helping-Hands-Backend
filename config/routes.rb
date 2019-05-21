@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       post '/login', to: 'auth#create'
       get '/clientProfile', to: 'users#clientProfile'
       get '/spProfile', to: 'users#spProfile'
+      get '/reauthorized', to: 'users#reauthorized'
     end
   end
 
