@@ -46,7 +46,7 @@ Service.create(job: "House Keeper", price: 60.00, availability: "Mon - Fri 9 am 
 Service.create(job: "House Keeper", price: 60.00, availability: "Mon - Fri 9 am - 5 pm", service_provider_id: gracie.id)
 Service.create(job: "Gardener", price: 60.00, availability: "Mon - Fri 9 am - 5 pm", service_provider_id: marcus.id)
 Service.create(job: "Gardener", price: 60.00, availability: "Mon - Fri 9 am - 5 pm", service_provider_id: mathew.id)
-Service.create(job: "Tutor", price: 60.00, service_provider_id: ant.id)
+Service.create(job: "Tutor", price: 60.00, availability: "Mon - Fri 9 am - 5 pm", service_provider_id: ant.id)
 # Service.create(job: "", price: 60.00, service_provider_id: )
 
 # # Bookings
