@@ -5,6 +5,6 @@ class UserSerializer < ActiveModel::Serializer
   has_many :clients
 
   # client side
-  has_many :appointments
+  has_many :appointments, serializer: BookingSerializer
   has_many :service_providers
 end
