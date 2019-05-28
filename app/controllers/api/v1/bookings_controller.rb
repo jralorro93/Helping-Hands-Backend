@@ -7,12 +7,11 @@ class Api::V1::BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find_by(params[:id])
+    @booking = Booking.find(params[:id])
     render json: @booking
   end
 
   def create
-    # byebug
     @booking = Booking.create(booking_params)
     if @booking.valid?
       render json: @booking
@@ -21,9 +20,22 @@ class Api::V1::BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    @token = encode_token(user_id: @user.id)
+    render json: { user: UserSerializer.new(@user), jwt: @token}
+  end
+
+  def destroy
+    @booking = Booking.find_by(booking_params)
+    @booking.destroy
+
+  end
+
   private
 
   def booking_params
-    body_params = params.permit(:service_id, :date, :time, :client_id)
+    params.permit(:service_id, :date, :time, :client_id, :service_provider_id)
   end
 end
