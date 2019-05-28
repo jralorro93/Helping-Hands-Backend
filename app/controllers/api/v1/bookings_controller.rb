@@ -23,8 +23,9 @@ class Api::V1::BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    @token = encode_token(user_id: @user.id)
-    render json: { user: UserSerializer.new(@user), jwt: @token}
+    # @token = encode_token(user: @user)
+    # render json: { user: UserSerializer.new(@user), jwt: @token}
+    render json: @booking
   end
 
   def destroy
