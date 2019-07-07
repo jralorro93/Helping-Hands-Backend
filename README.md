@@ -1,24 +1,28 @@
-# README
+# Helping Hands Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  A site that allows freelancers post their job listing for members to book an appointment. Members may add, edit, and delete appointments, as well as edit their profile. Freelancers may view their current job appointments, and edit their availability and their profession.
 
-Things you may want to cover:
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+  Comment in:
 
-* Configuration
+  ```
+    gem 'rack-cors'
+    gem 'bcrypt', '~> 3.1.7'
+  ```
 
-* Database creation
+  Make sure to run:
 
-* Database initialization
+  ```
+    bundle install
+  ```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Built With
 
-* Deployment instructions
-
-* ...
+  **ActiveRecord** - Allows creation and use of data that requires persistent storage to a database.
+  <br>
+  **Bcrypt** - A password hashing function
+  <br>
+  **Rails** - A web-application framework

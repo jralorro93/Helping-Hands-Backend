@@ -8,4 +8,10 @@ class UserSerializer < ActiveModel::Serializer
   # client side
   has_many :appointments, serializer: BookingSerializer
   has_many :service_providers
+
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # validates :email, presence: true, uniqueness: true
+  # validates :role, presence: true
+
 end
