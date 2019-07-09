@@ -34,7 +34,7 @@ class Api::V1::ServicesController < ApplicationController
   private
 
   def service_params
-    params.permit(:job, :price, :availability, :service_provider_id)
+    params.permit(:job, :description, :availability, :service_provider_id)
   end
 
 end
