@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   # service provider side
   # has_many :jobs, class_name: "Booking", foreign_key: 'service_provider_id'
-  has_many :services, foreign_key: 'service_provider_id'
-  has_many :bookings, through: :services
+  has_one :service, foreign_key: 'service_provider_id'
+  has_many :bookings, through: :service
   has_many :clients, through: :bookings, class_name: "User"
 end

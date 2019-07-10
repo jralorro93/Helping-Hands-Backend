@@ -12,16 +12,17 @@ class Api::V1::ServicesController < ApplicationController
   end
 
   def create
-    @service = Service.create(serivce_params)
+    @service = Service.create(service_params)
     if @service.valid?
       render json: @service
     else
+      @service.errors.full_messages.first if @service.errors.any?
       render json: { error: 'Failed to create service'}, status: :not_accepted
     end
   end
 
   def update
-    @service = User.find(params[:id])
+    @service = Service.find(params[:id])
     @service.update(service_params)
     render json: @service
   end
@@ -34,7 +35,7 @@ class Api::V1::ServicesController < ApplicationController
   private
 
   def service_params
-    params.permit(:job, :description, :availability, :service_provider_id)
+    params.require(:service).permit(:job, :description, :availability, :service_provider)
   end
 
 end

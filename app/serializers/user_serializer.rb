@@ -3,7 +3,7 @@ class UserSerializer < ActiveModel::Serializer
   # service provider side
   has_many :bookings
   has_many :clients
-  has_many :services
+  has_one :service
 
   # client side
   has_many :appointments, serializer: BookingSerializer
