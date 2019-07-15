@@ -17,7 +17,7 @@ class Api::V1::ServicesController < ApplicationController
       render json: @service
     else
       @service.errors.full_messages.first if @service.errors.any?
-      render json: { error: 'Failed to create service'}, status: :not_accepted
+      render json: { error: @service.errors.full_messages}, status: :not_accepted
     end
   end
 
@@ -35,7 +35,7 @@ class Api::V1::ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:job, :description, :availability, :service_provider)
+    params.require(:service).permit(:job, :description, :availability, :service_provider_id)
   end
 
 end
